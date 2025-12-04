@@ -1,0 +1,62 @@
+{{ define "content" }}
+<section class="container projects-section">
+  <header>
+    <h1 class="title">Projects</h1>
+    <p class="projects-subtitle">Things I've built</p>
+  </header>
+
+  <div class="projects-grid">
+    {{ range .Pages.ByWeight }}
+    <div class="project-card">
+      <!-- Project Image -->
+      {{ with .Params.image }}
+      <div class="project-image">
+        <img src="{{ . }}" alt="{{ $.Title }}">
+      </div>
+      {{ end }}
+
+      <!-- Project Content -->
+      <div class="project-content">
+        <h3 class="project-title">{{ .Title }}</h3>
+        
+        {{ with .Description }}
+        <p class="project-description">{{ . }}</p>
+        {{ else }}
+        <p class="project-description">{{ .Summary }}</p>
+        {{ end }}
+
+        <!-- Technology Badges -->
+        {{ with .Params.badges }}
+        <div class="project-badges">
+          {{ range . }}
+          <span class="badge">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        <!-- Action Buttons -->
+        <div class="project-actions">
+          <!-- Featured Link (Demo button) -->
+          {{ with .Params.featured }}
+          <a href="{{ .link }}" class="btn-featured" target="_blank" rel="noopener">
+            {{ .name | default "Demo" }}
+          </a>
+          {{ end }}
+
+          <!-- Additional Links (GitHub, etc.) -->
+          {{ with .Params.links }}
+          <div class="project-links">
+            {{ range . }}
+            <a href="{{ .url }}" target="_blank" rel="noopener" {{ with .title }}title="{{ . }}"{{ end }}>
+              <i class="{{ .icon }}"></i>
+            </a>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

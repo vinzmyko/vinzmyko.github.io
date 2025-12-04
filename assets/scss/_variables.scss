@@ -1,0 +1,89 @@
+// =============================================================================
+// FONTS
+// =============================================================================
+
+$font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-family-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-family-mono: 'Chivo Mono', 'Fira Code', 'Consolas', monospace;
+$code-font-family: 'Chivo Mono', 'Fira Code', 'Consolas', monospace;
+
+// =============================================================================
+// LIGHT MODE COLORS (fallback)
+// =============================================================================
+
+$bg-color: #f8fafc !default;
+$fg-color: #1e293b !default;
+$alt-bg-color: #e2e8f0 !default;
+$alt-fg-color: #0f172a !default;
+$darker-alt-bg-color: #cbd5e1 !default;
+$link-color: #0284c7 !default;
+
+// =============================================================================
+// DARK MODE COLORS - Your Tailwind "Cool Professional" palette
+// =============================================================================
+// background: '#1e293b' (slate-800)
+// text: '#e7e5e4' (stone-200)
+// link: '#38bdf8' (sky-400)
+// accent1: '#2dd4bf' (teal-400)
+// accent2: '#4f46e5' (indigo-600)
+// highlight: '#fcd34d' (amber-300)
+// =============================================================================
+
+// Main background - your background
+$bg-color-dark: #1e293b !default;
+
+// Primary text - your text
+$fg-color-dark: #e7e5e4 !default;
+
+// Alt backgrounds (cards, code blocks, nav hover)
+$alt-bg-color-dark: #334155 !default; // slate-700
+$alt-fg-color-dark: #e7e5e4 !default;
+$lighter-alt-bg-color-dark: #475569 !default; // slate-600
+
+// Links - your link color (sky-400)
+$link-color-dark: #38bdf8 !default;
+
+// =============================================================================
+// CUSTOM ACCENT COLORS - Available for your custom components
+// =============================================================================
+
+// Accent 1 - teal-400 (highlights, tags, badges)
+$accent1-color: #2dd4bf;
+
+// Accent 2 - indigo-600 (CTAs, buttons)
+$accent2-color: #4f46e5;
+
+// Highlight - amber-300 (hover effects, emphasis)
+$highlight-color: #fcd34d;
+
+// =============================================================================
+// NOTICE/ALERT COLORS (hugo-coder defaults)
+// =============================================================================
+
+$fg-color-notice-note-icon: #5e35b1 !default;
+$bg-color-notice-note-title: #673ab71a !default;
+$bg-color-notice-note-content: #7e57c21a !default;
+
+$fg-color-notice-tip-icon: #00897b !default;
+$bg-color-notice-tip-title: #0096881a !default;
+$bg-color-notice-tip-content: #26a69a1a !default;
+
+$fg-color-notice-example-icon: #6d4c41 !default;
+$bg-color-notice-example-title: #7955481a !default;
+$bg-color-notice-example-content: #8d6e631a !default;
+
+$fg-color-notice-question-icon: #7cb342 !default;
+$bg-color-notice-question-title: #8bc34a1a !default;
+$bg-color-notice-question-content: #9ccc651a !default;
+
+$fg-color-notice-info-icon: #1e88e5 !default;
+$bg-color-notice-info-title: #2196f31a !default;
+$bg-color-notice-info-content: #42a5f51a !default;
+
+$fg-color-notice-warning-icon: #ffb300 !default;
+$bg-color-notice-warning-title: #ffc1071a !default;
+$bg-color-notice-warning-content: #ffca281a !default;
+
+$fg-color-notice-error-icon: #e53935 !default;
+$bg-color-notice-error-title: #f443361a !default;
+$bg-color-notice-error-content: #ef53501a !default;

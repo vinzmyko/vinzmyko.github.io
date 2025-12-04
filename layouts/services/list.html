@@ -1,0 +1,31 @@
+{{ define "content" }}
+<section class="container services-section">
+  <header>
+    <h1 class="title">Services</h1>
+    <p class="services-subtitle">What I can help you with</p>
+  </header>
+
+  <div class="services-grid">
+    {{ range .Pages.ByWeight }}
+    <div class="service-card">
+      {{ with .Params.icon }}
+      <div class="service-icon">
+        <i class="{{ . }}"></i>
+      </div>
+      {{ end }}
+      <h3 class="service-title">{{ .Title }}</h3>
+      <div class="service-description">
+        {{ .Content }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+  <div class="services-cta">
+    <p>Have a project in mind? Let's talk about how I can help.</p>
+    <a href="mailto:vinzmykodelrosario@gmail.com" class="btn-contact">
+      <i class="fa fa-envelope"></i> Get in Touch
+    </a>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,20 @@
+{{ define "content" }}
+<section class="container post">
+  <article>
+    <header>
+      <h1>{{ .Title }}</h1>
+      <p style="color: #888;">{{ .Date.Format "January 2006" }} • {{ range .Params.tags }}#{{ . }} {{ end }}</p>
+
+      {{ if .Params.repo }}
+      <a href="{{ .Params.repo }}" target="_blank" style="display: inline-block; margin-bottom: 20px;">
+        <i class="fa fa-github"></i> View Source Code
+      </a>
+      {{ end }}
+    </header>
+
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </article>
+</section>
+{{ end }}

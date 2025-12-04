@@ -1,0 +1,33 @@
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@400;500&family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap"
+  rel="stylesheet">
+
+{{ if hugo.IsServer }}
+{{ $cssOpts := (dict "targetPath" "css/coder.css" "enableSourceMap" true ) }}
+{{ $styles := resources.Get "scss/coder.scss" | resources.ExecuteAsTemplate "style.coder.css" . | toCSS $cssOpts }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
+{{ else }}
+{{ $cssOpts := (dict "targetPath" "css/coder.css" ) }}
+{{ $styles := resources.Get "scss/coder.scss" | resources.ExecuteAsTemplate "style.coder.css" . | toCSS $cssOpts |
+resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"
+  crossorigin="anonymous" media="screen" />
+{{ end }}
+
+{{ if .Site.Params.rtl }}
+{{ if hugo.IsServer }}
+{{ $cssOpts := (dict "targetPath" "css/coder-rtl.css" "enableSourceMap" true ) }}
+{{ $styles := resources.Get "scss/coder-rtl.scss" | resources.ExecuteAsTemplate "style.coder-rtl.css" . | toCSS $cssOpts
+}}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
+{{ else }}
+{{ $cssOpts := (dict "targetPath" "css/coder-rtl.css" ) }}
+{{ $styles := resources.Get "scss/coder-rtl.scss" | resources.ExecuteAsTemplate "style.coder-rtl.css" . | toCSS $cssOpts
+| resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"
+  crossorigin="anonymous" media="screen" />
+{{ end }}
+{{ end }}

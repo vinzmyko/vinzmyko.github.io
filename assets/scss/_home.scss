@@ -1,0 +1,140 @@
+// =============================================================================
+// CUSTOM HOMEPAGE STYLES
+// =============================================================================
+
+// Homepage container
+.container.centered {
+  max-width: 800px;
+  padding: 2rem 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: 4rem 2rem;
+  }
+}
+
+// Author section on homepage
+.about {
+  text-align: center;
+
+  .author-name {
+    font-family: $font-family-mono;
+    font-size: 5rem;
+    font-weight: 700;
+    color: $accent1-color;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+
+    @media (min-width: 768px) {
+      font-size: 4.5rem;
+    }
+  }
+
+  .author-title {
+    font-family: $font-family-heading;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $link-color-dark;
+    margin-bottom: 2rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.2rem;
+    }
+  }
+
+  .author-bio {
+    font-family: $font-family;
+    font-size: 1.0rem;
+    line-height: 1.8;
+    color: $fg-color-dark;
+    max-width: 80rem;
+    margin: 1rem auto 2.5rem auto;
+
+    @media (min-width: 768px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  // CTA Buttons
+  .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+
+    @media (min-width: 768px) {
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 6px;
+    font-family: $font-family-heading;
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-decoration: none;
+    border: 2px solid;
+    transition: all 0.2s ease;
+
+    p {
+      font-size: 1.4rem;
+      color: $fg-color;
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .btn-primary {
+    border-color: $link-color-dark;
+    color: $link-color-dark;
+    background: transparent;
+
+    &:hover {
+      background-color: $link-color-dark;
+      color: $bg-color-dark;
+    }
+  }
+
+  .btn-secondary {
+    border-color: $accent1-color;
+    color: $accent1-color;
+    background: transparent;
+
+    &:hover {
+      background-color: $accent1-color;
+      color: $bg-color-dark;
+    }
+  }
+
+  // Social icons
+  ul.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: $link-color-dark;
+      transition: color 0.3s ease;
+
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+
+      &:hover {
+        color: $accent2-color;
+      }
+    }
+  }
+}

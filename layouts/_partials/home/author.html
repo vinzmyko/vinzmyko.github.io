@@ -1,0 +1,14 @@
+<h1 class="author-name">{{ .Site.Params.author }}</h1>
+<h2 class="author-title">{{ .Site.Params.info | markdownify }}</h2>
+{{ with .Site.Params.description }}
+<p class="author-bio">{{ . }}</p>
+{{ end }}
+
+<div class="cta-buttons">
+  <a href="/projects" class="btn btn-primary">
+    <i class="fa fa-code"></i> See My Work
+  </a>
+  <a href="/services" class="btn btn-secondary">
+    <i class="fa fa-handshake-o"></i> Work With Me
+  </a>
+</div>

@@ -1,3 +1,49 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://vinzmyko.github.io/"
+title = "Vinz Myko Del Rosario"
+languageCode = "en"
+defaultContentLanguage = "en"
+
+[params]
+author = "Vinz Myko Del Rosario"
+info = "Software Engineer"
+description = "Backend-focused developer working in Go and Rust. Through freelance, I also deliver websites, e-commerce builds, and IT infrastructure. Whatever the project needs."
+keywords = "blog,developer,personal,backend,rust,go"
+
+colorScheme = "dark"
+hideColorSchemeToggle = true
+since = 2025
+
+[[params.social]]
+name = "Github"
+icon = "fa fa-2x fa-github"
+weight = 1
+url = "https://github.com/vinzmyko"
+target = "_blank"
+rel = "noreferrer"
+
+[[params.social]]
+name = "LinkedIn"
+icon = "fa fa-2x fa-linkedin"
+weight = 2
+url = "https://linkedin.com/in/vinzmyko/"
+target = "_blank"
+rel = "noreferrer"
+
+[menu]
+[[menu.main]]
+name = "Projects"
+url = "/projects/"
+weight = 1
+[[menu.main]]
+name = "Services"
+url = "/services/"
+weight = 2
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 3
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true

@@ -1,0 +1,172 @@
+// =============================================================================
+// SERVICES SECTION
+// =============================================================================
+
+.services-section {
+  padding: 2rem 0;
+
+  .title {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .services-subtitle {
+    text-align: center;
+    color: $fg-color;
+    opacity: 0.7;
+    margin-bottom: 3rem;
+  }
+}
+
+// Services Grid
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+// Individual Service Card
+.service-card {
+  background: $alt-bg-color;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.service-icon {
+  margin-bottom: 1.25rem;
+
+  i {
+    font-size: 2.5rem;
+    color: $link-color;
+  }
+}
+
+.service-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: $alt-fg-color;
+}
+
+.service-description {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: $fg-color;
+  opacity: 0.85;
+
+  p {
+    margin: 0;
+  }
+}
+
+// Bottom CTA Section
+.services-cta {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  p {
+    font-size: 1.4rem;
+    color: $fg-color;
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.btn-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 2px solid $link-color;
+  color: $link-color;
+  font-weight: 600;
+  font-size: 1.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: $link-color;
+    color: $bg-color;
+    text-decoration: none;
+  }
+}
+
+// =============================================================================
+// DARK MODE
+// =============================================================================
+
+@mixin services_dark {
+  .services-section {
+    .services-subtitle {
+      color: $fg-color-dark;
+    }
+  }
+
+  .service-card {
+    background: $alt-bg-color-dark;
+
+    &:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .service-icon i {
+    color: $link-color-dark;
+  }
+
+  .service-title {
+    color: $alt-fg-color-dark;
+  }
+
+  .service-description {
+    color: $fg-color-dark;
+  }
+
+  .services-cta {
+    border-top-color: rgba(255, 255, 255, 0.1);
+
+    p {
+      color: $fg-color-dark;
+    }
+  }
+
+  .btn-contact {
+    border-color: $link-color-dark;
+    color: $link-color-dark;
+
+    &:hover {
+      background: $link-color-dark;
+      color: $bg-color-dark;
+    }
+  }
+}
+
+body.colorscheme-dark {
+  @include services_dark();
+}
+
+body.colorscheme-auto {
+  @media (prefers-color-scheme: dark) {
+    @include services_dark();
+  }
+}
